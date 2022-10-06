@@ -17,7 +17,7 @@ void resetBoard() {
 void readInput(int *num1, int *num2) {
     while(1) {
         scanf("%d%d", &*num1, &*num2);
-        if(*num1 != 1 && *num1 != 2 &&*num1 != 3 && *num2 != 1 && *num2 != 2 && *num2 != 3) {
+        if(*num1 != 1 && *num1 != 2 && *num1 != 3 || *num2 != 1 && *num2 != 2 && *num2 != 3) {
             printf("Please provide a valid input\n");
             fflush(stdin);
             continue;
