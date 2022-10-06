@@ -6,6 +6,14 @@
 char board[3][3];
 char symbol[2] = {'O', 'X'};
 
+void resetBoard() {
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            board[i][j] = ' ';
+        }
+    }
+}
+
 void readInput(int *num1, int *num2) {
     while(1) {
         scanf("%d%d", &*num1, &*num2);
@@ -145,7 +153,6 @@ int pvcGame() {
                         if(randomSquare == counter) {
                             board[i][j] = symbol[playerTurn - 1];
                             i = 3;
-                            printf("%d %d\n", i, j);
                             break;
                         }
                         counter++;
@@ -169,10 +176,10 @@ int pvcGame() {
     printBoard();
     //Print winner or tie
     if(winner == 'O') {
-        printf("Player 1 wins!\n");
+        printf("You Win!\n");
     }
     else if(winner == 'X') {
-        printf("Player 2 wins!\n");
+        printf("You Lose!\n");
     }
     else {
         printf("Tie!\n");
@@ -183,12 +190,6 @@ int pvcGame() {
 
 int main() {
     int playAgain = 1;
-
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 3; j++) {
-            board[i][j] = ' ';
-        }
-    }
 
     //Prompt user for game they wish to play
     printf("Welcome to Tic Tac Toe!\n\n");
@@ -211,6 +212,7 @@ int main() {
 
     while(playAgain == 1) {
         //Start game, 2 player or player vs computer
+        resetBoard();
         if(gameType == 1) {
             pvpGame();
         }
