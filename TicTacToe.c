@@ -56,6 +56,7 @@ char checkWin() {
 }
 
 void printBoard() {
+    printf("Current Board:\n");
     for(int i = 0; i < 3; i++) {
         printf("%c | %c | %c\n", board[i][0], board[i][1], board[i][2]);
         if(i < 2) {
@@ -75,7 +76,6 @@ int pvpGame() {
         int num1, num2;
 
         //Print game board
-        printf("Current Board:\n");
         printBoard();
         //Print player/cpu turn
         printf("Player %d: make your move\n", playerTurn);
