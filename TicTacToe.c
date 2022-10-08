@@ -24,6 +24,7 @@ void readInput(int *num1, int *num2) {
         }
         break;
     }
+    printf("\n");
 }
 
 char checkWin() {
@@ -63,6 +64,7 @@ void printBoard() {
             printf("---------\n");
         }
     }
+    printf("\n");
 }
 
 int pvpGame() {
@@ -142,7 +144,7 @@ int pvcGame() {
             }
         }
         else {
-            printf("Computer move\n");
+            printf("Computer move\n\n");
             int randomSquare = (rand() % (9 - numMoves));
             int counter = 0;
 
