@@ -124,7 +124,6 @@ int pvcGame() {
 
     while(winner == ' ' && numMoves != 9) {
         //Print game board
-        printf("Current Board:\n");
         printBoard();
 
         if(playerTurn == 1) {
